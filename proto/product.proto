@@ -61,7 +61,7 @@ message ProductResponse {
 message ProductErrorResponse {
     string code = 1;
     string message = 2;
-    optional string details = 3;
+    string details = 3;
 }
 
 /*

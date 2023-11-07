@@ -128,7 +128,7 @@ ProductErrorResponse represent event message of product error.
 | ----- | ---- | ----- | ----------- |
 | code | [string](#string) |  |  |
 | message | [string](#string) |  |  |
-| details | [string](#string) | optional |  |
+| details | [string](#string) |  |  |
 
 
 

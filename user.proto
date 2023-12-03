@@ -62,7 +62,8 @@ message UserMessageError {
         User user = 2;
         UserId userId = 3;
     }
-    string msgCreatedAt = 4;
+    string msgError = 4;
+    string msgCreatedAt = 5;
 }
 
 /*

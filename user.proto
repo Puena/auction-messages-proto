@@ -13,8 +13,8 @@ message User {
     string email = 3;
     string phone = 4;
     string photo = 5;
-    string createdAt = 6;
-    string lastLogin = 7;
+    int64 createdAt = 6;
+    int64 lastLogin = 7;
     bool disabled = 8;
 }
 

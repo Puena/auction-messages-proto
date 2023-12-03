@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package product;
+package auction;
 
-option go_package = "github.com/Puena/autction-messages-proto/product";
+option go_package = "github.com/Puena/autction-messages-proto/auction";
 
 /*
 * GetProductByIdRequest represent event message to get product by id.

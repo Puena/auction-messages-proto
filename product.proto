@@ -2,85 +2,43 @@ syntax = "proto3";
 
 package auction;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/Puena/autction-messages-proto/auction";
 
 /*
-* GetProductByIdRequest represent event message to get product by id.
+    Product message represent a product.
 */
-message GetProductByIdRequest {
-    string id = 1;
-}
-
-/*
-* GetProductsByNameRequest represent event message to get products by name.
-*/
-message GetProductsByNameRequest {
-    repeated string name = 2;   
-}
-
-/*
-* ProductCreateRequest represent event message to create products.
-*/
-message ProductCreateRequest {
-    string name = 1;
-    repeated string media = 2;
-    string description = 3;
-}
-
-/*
-* ProductUpdateRequest represent event message to update product.
-*/
-message ProductUpdateRequest {
-   string id = 1; 
-   repeated string media = 2;
-   optional string description = 3;
-}
-
-/*
-* ProductDeleteRequest represent event message to delete product.
-*/
-message ProductDeleteRequest {
-    string id = 1;
-}
-
-/*
-* ProductResponse represent message data of product.
-*/
-message ProductResponse {
+message Product {
     string id = 1;
     string name = 2;
-    repeated string media = 3;
+    repeated string media = 3; // it is a list of media urls.
     string description = 4;
-    string created_by = 5;
-    string created_at = 6;
+    string created_by = 5; // it is user id.
+    google.protobuf.Timestamp created_at = 6;
 }
 
-/*
-* ProductErrorResponse represent event message of product error.
-*/
-message ProductErrorResponse {
-    string code = 1;
-    string message = 2;
-    string details = 3;
+message EventProductCreated {
+    string key = 1;
+    Product value = 2;
 }
 
-/*
-* ProductCreatedResponse represent event message after create product.
-*/
-message ProductCreatedResponse {
-    ProductResponse product = 1;
+message EventProductUpdated {
+    string key = 1;
+    Product value = 2;
 }
 
-/*
-* ProductUpdatedResponse represent event message after update product.
-*/
-message ProductUpdatedResponse {
-    ProductResponse product = 1;
+message EventProductDeleted {
+    string key = 1;
+    Product value = 2;
 }
 
-/*
-* ProductDeletedResponse represent event message after delete product.
-*/
-message ProductDeletedResponse {
-    ProductResponse product = 1;
+message EventProductFound {
+    string key = 1;
+    Product value = 2;
+}
+
+message EventProductsFound {
+    string key = 1;
+    repeated Product value = 2;
 }

@@ -39,7 +39,7 @@ message DeleteProduct {
 }
 
 message ProductError {
-    string code = 1;
+    int32 code = 1;
     string message = 2;
     string reference_event_key = 3;
 }
